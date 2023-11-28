@@ -3,13 +3,15 @@ from StoreApp.models import Departamento
 
 # Create your views here.
 def index(request):
-    departamentos = Departamento.objects.all()
-    context = {
-        'departamentos' : departamentos
-    }
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')
 
+def produto_lista(request):
+    return render(request, 'produtos.html')
 
+def produto_detalhe(request):
+    return render(request, 'produto_detalhes.html')
+
+'''
 def produto_lista(request):
     departamentos = Departamento.objects.all()
     context = {
@@ -18,4 +20,9 @@ def produto_lista(request):
     return render(request, 'produtos.html', context)
 
 def produto_detalhe(request):
-    return render(request, 'produtos_detalhes.html')
+    departamentos = Departamento.objects.all()
+    context = {
+        'departamentos' : departamentos
+    }
+    return render(request, 'produto_detalhes.html', context)
+'''
