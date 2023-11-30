@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block Titulo %}Senac Store - Produtos{% endblock Titulo %}
+{% block Titulo %}{{ categoria }} - Senac Store{% endblock Titulo %}
 
 {% block Conteudo %} 
 
@@ -9,7 +9,9 @@
         <header class="bg-light py-1">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-dark">
-                    <h1 class="display-4 fw-bolder">Título da Categoria</h1>
+                    <h1 class="display-4 fw-bolder"><div class="alert alert-primary" role="alert">
+                        {{ categoria }}
+                      </div></h1>
                 </div>
             </div>
         </header>
@@ -21,29 +23,12 @@
                     
                     
                     <!-- Inicio Produtos -->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
-                    <!-------->
-                    {% include "includes/card_produto.html" %}
+                    {% for produto in produtos %}
+                        {% include "includes/card_produto.html" %}
+                    {% empty %}                 
+                        <b>Nenhum Produto Encontra</b>
+                    {% endfor %}
+                    
                     <!-- termino produtos-->
                 </div>
             </div>
