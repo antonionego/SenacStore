@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block Titulo %}Senac Store - Sobre nós{% endblock Titulo %}
+
+{% block Conteudo %}
+
+ <!-- Header-->
+ <header class="bg-primary py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder" >Sobre Nós!</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Conheça nossa Empresa</p>
+        </div>
+    </div>
+</header>
+<!-- Section-->
+ <!-- Product section-->
+ <section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{% static 'img/about.jpg' %}" alt="Senac - SMP" /></div>
+            <div class="col-md-6">
+                <div class="small mb-1"><h4>Bem-vindo à Senac Store</h4>
+                                        <h5>Sua Janela para o Conhecimento!</h5>
+
+                                        <p class="lead">Na Senac Store, acreditamos no poder da educação e no impacto transformador que ela pode ter na vida das pessoas.</p>
+                
+                <div class="fs-5 mb-5">
+                    <span ></span>
+                    <span class="text-start">Quem Somos:
+                        <p class="lead">A Senac Store é parte integrante do Sistema Senac, 
+                            uma instituição renomada com mais de 75 anos de tradição na oferta de cursos e serviços educacionais. 
+                            Como uma extensão desse compromisso, a Senac Store nasceu para proporcionar acesso fácil e conveniente
+                            a materiais didáticos, livros, e produtos relacionados ao universo educacional.</div></span>
+                </div>               
+                
+                <div class="d-flex">
+                    <a class="navbar-brand" href="{%url 'index' %}">
+                        <button class="btn btn-outline-primary flex-shrink-0" type="button">
+                            <i class="bi bi-cart"></i>
+                            Conheça nossos produtos
+                        </button>
+                    <a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock Conteudo %}
