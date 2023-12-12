@@ -15,9 +15,19 @@ def about(request):
     return render(request, 'about.html')
 
 def cadastro(request):
-    #instanciar o form de cliente
-    formulario = ClienteForm()
     mensagem = ''
+    #instanciar o form de cliente
+    if request.method == "POST":
+        formulario = ClienteForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            formulario = ClienteForm()
+            mensagem = "Cliente cadastrado com sucesso :)"
+        else:
+            mensagem = "Verifique os erros abaixo:"
+    else:
+        formulario = ClienteForm()
+    
 
     context = {
         'form_cliente' : formulario,
